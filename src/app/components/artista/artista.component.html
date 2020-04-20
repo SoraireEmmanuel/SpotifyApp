@@ -1,0 +1,54 @@
+<div class="cabeza"> </div>
+<div class="row row2">
+    <div class="imagenArtista">
+
+        <img [src]="artista.images|noimage" class=" img-circle ">
+
+    </div>
+    <div class="infoArtista">
+        <h3>{{artista.name}}</h3>
+        <p>
+            <a [href]="artista.external_urls.spotify" target="_blank">Ir a su pagina oficial de Spotify</a>
+        </p>
+        <button routerLink="/search" class=" botonVerArtista">Nueva Busqueda</button>
+        <button (click)="compartir(artista.external_urls.spotify)" class="botonVerArtista"> Compartir  </button>
+    </div>
+</div>
+
+<div class="albummarge2">
+    <div *ngFor="let track of topTracks " class="tarjeta puntero ">
+
+        <iframe [src]="track.uri | domseguro: 'https://open.spotify.com/embed?uri='" width="360" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+
+    </div>
+</div>
+
+
+
+<div class="row ">
+    <div class="albummarge">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Foto</th>
+                    <th>Album</th>
+                    <th>Cancion</th>
+                    <th>Vista Previa</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr *ngFor="let track of topTracks">
+                    <td> <img [src]="track.album.images| noimage" class="img-thumb"></td>
+                    <td>{{track.album.name}}</td>
+                    <td>{{track.name}}</td>
+                    <td><iframe [src]="track.uri | domseguro: 'https://open.spotify.com/embed?uri='" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe></td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>

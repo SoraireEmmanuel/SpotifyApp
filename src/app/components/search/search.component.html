@@ -1,0 +1,64 @@
+<div class="cabeza"> </div>
+<div class="contenedor ">
+    <form autocomplete="off" [formGroup]="forma" (ngSubmit)="buscar(palabraClave.value,tipo.value,cantidad.value)">
+        <div>
+            <select formControlName="tipo" [class.is-invalid]="tipoNoValido" #tipo type="text" class="botonCompartir2 ">
+            <option selected value="">Tipo </option>
+            <option value="track">Tracks</option> 
+            <option value="album">Albunes</option> 
+            <option value="artist">Artistas</option> 
+            </select>
+
+
+            <select #cantidad formControlName="cantidad" [class.is-invalid]="cantidadNoValido" type="text" class="botonCompartir2 ">
+            <option selected value="">Cantidad </option>
+            <option value="10">10</option>
+            <option value="15">15</option>
+            <option value="20">20</option>
+            <option value="25">25</option>
+            <option value="30">30</option>
+            </select>
+
+
+
+            <input id="agrega" #palabraClave formControlName="clave" [class.is-invalid]="claveNoValido" type="text" class="form-input-busqueda " placeholder="Escribe y Busquemos . . .">
+
+
+
+            <button class="botonCompartir2" type="submit">Buscar</button>
+        </div>
+        <small class="errores" *ngIf="tipoNoValido">*Tiene que elegir un tipo de busqueda</small>
+        <small class="errores" *ngIf="cantidadNoValido">*Tiene que elegir la cantidad de respuestas</small>
+        <small class="errores" *ngIf="claveNoValido">*Tiene que escribir una palabra clave</small>
+    </form>
+
+</div>
+
+<div *ngIf="controlHistorial" class="historialTitulo"> Busquedas recientes:
+    <div *ngFor="let item of historial" class="historialCuerpo">
+        Tipo: {{item.tipo}}-Cantidad: {{item.cantidad}}-Palabra Buscada: {{item.clave}}</div>
+</div>
+<div class="buscarMargenTarjeta">
+    <!--codigo adaptado de aqui en adelante-->
+    <!--artistas y album-->
+    <div *ngIf="!loading " class="tarjeta-columna animated fadeIn ">
+
+        <div *ngFor="let item of artistas| paginate: config " (click)="verArtista( item ) " class="tarjeta puntero ">
+            <img class="tarjeta-img-top " [src]="item.images | noimage " alt=" tarjeta-img ">
+            <div class="tarjeta-cuerpo ">
+                <h3 class="tarjeta-titulo "> {{ item.name}} </h3>
+            </div>
+        </div>
+    </div>
+    <!--Tracks-->
+    <div *ngIf="loading " class="tarjeta-columna animated fadeIn ">
+        <div *ngFor="let item of artistas| paginate: config " (click)="verArtista( item ) " class="tarjeta puntero ">
+            <img class="tarjeta-img-top " [src]="item.album.images | noimage " alt="tarjeta-img ">
+            <audio class="audioCancion " [src]="item.preview_url " controls></audio>
+            <div class="tarjeta-cuerpo ">
+                <h3 class="tarjeta-titulo "> {{ item.name}} </h3>
+            </div>
+        </div>
+    </div>
+</div>
+<pagination-controls (pageChange)="pageChanged($event) "></pagination-controls>

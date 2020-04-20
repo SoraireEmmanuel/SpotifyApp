@@ -1,0 +1,9 @@
+<div class="cabeza"> </div>
+<div class="subTitulo">
+    <h4><strong>Disfruta los mejores lanzamientos.</strong> </h4>
+</div>
+<div class="tarjeta-columna  animated fadeIn ">
+    <div *ngFor="let item of nuevasCanciones | paginate: config " class="tarjeta puntero " (click)="verArtista( item )">
+        <img class="tarjeta-img-top " [src]="item.images | noimage " alt="tarjeta-img ">
+    </div>
+<pagination-controls (pageChange)="pageChanged($event) "></pagination-controls>

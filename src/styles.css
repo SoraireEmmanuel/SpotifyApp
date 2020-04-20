@@ -1,0 +1,746 @@
+    /* You can add global styles to this file, and also import other style files */
+    
+    body {
+        background-image: url(./assets/img/Spotify.jpg);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-attachment: fixed;
+        background-size: cover;
+        color: rgb(7, 4, 4) !important;
+        margin: 0;
+    }
+    
+    .mapa-api {
+        width: 200px;
+    }
+    
+    .icono-contacto {
+        width: 40px;
+        height: 40px;
+        margin: none;
+        padding: none;
+        border: none;
+    }
+    
+    a:link,
+    a:visited,
+    a:active {
+        text-decoration: none;
+    }
+    /*estilos de las cargas */
+    
+    hr {
+        border-color: white;
+    }
+    
+    .puntero {
+        cursor: pointer;
+    }
+    
+    .img-circle {
+        border-radius: 100%;
+        width: 200px;
+        position: relative;
+    }
+    /*contactos estilo*/
+    
+    .container {
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+    
+    .contacto2 {
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        display: block;
+        margin: auto;
+        text-align: left;
+    }
+    
+    .tituloContacto {
+        font-family: sans-serif;
+        text-align: justify;
+        font-size: 20px;
+        margin-top: 6%;
+        text-align: center;
+    }
+    
+    .comoContactarnos {
+        text-align: left;
+        font-family: sans-serif;
+        font-size: 40px;
+    }
+    
+    .datosContactarnos {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    .mapa {
+        position: relative;
+        padding-bottom: 5%;
+        /* This is the aspect ratio */
+    }
+    
+    .mapa iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    
+    @media screen and (min-width: 1280px) {
+        .tituloQuienesSomos {
+            width: 1333px;
+        }
+        .qs {
+            width: 30%;
+        }
+        .personas {
+            width: 30%;
+        }
+        div.mapa {
+            height: 400px;
+            width: 50%;
+        }
+        .datosContactarnos>div {
+            width: 40%;
+            margin: 10px;
+        }
+        .contacto {
+            font-size: 60px;
+            font-display: black;
+        }
+    }
+    
+    @media screen and (max-width: 1280px) {
+        .qs {
+            width: 25%;
+        }
+        .personas {
+            width: 25%;
+        }
+        div.mapa {
+            width: 400px;
+        }
+        div.contacto {
+            font-size: 20px;
+        }
+        .datosContactarnos>div {
+            width: 40%;
+            margin: 10px;
+        }
+        .contacto {
+            font-size: 20px;
+        }
+    }
+    
+    @media screen and (max-width: 390px) {
+        body {
+            background-image: url(./assets/img/smallSpotify.jpg);
+            background-size: cover;
+        }
+        .tituloQuienesSomos {
+            text-align: center;
+        }
+        .qs {
+            width: 80%;
+            opacity: 0.8;
+            filter: alpha(opacity=50);
+        }
+        .personas {
+            display: none;
+        }
+        div.tituloNovedades {
+            text-align: left;
+        }
+        .comoContactarnos {
+            font-size: 20px;
+        }
+        div.mapa {
+            margin: auto;
+            width: 200px;
+            height: 200px;
+        }
+        .datosContactarnos>div {
+            width: 100%;
+        }
+        .contacto2 {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            display: block;
+            font-size: 20px;
+            margin: auto;
+            text-align: center;
+        }
+    }
+    /* css de tarjeta*/
+    
+    .buscarMargenTarjeta {
+        margin-top: 10px;
+    }
+    
+    .tarjeta {
+        /*card*/
+        position: relative;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        min-width: 0;
+        word-wrap: break-word;
+        background-color: rgb(255, 248, 248);
+        background-clip: border-box;
+        border: 1px solid rgba(0, 0, 0, 0.125);
+        border-radius: 0.25rem;
+    }
+    
+    .tarjeta-img,
+    .tarjeta-img-top,
+    .tarjeta-img-bottom {
+        -ms-flex-negative: 0;
+        flex-shrink: 0;
+        width: 100%;
+    }
+    /*margenes entre tarjetas*/
+    
+    .tarjeta-columna .tarjeta {
+        margin-bottom: 0.75rem;
+    }
+    /*query para las tarjetas*/
+    
+    @media (min-width: 576px) {
+        .tarjeta-columna {
+            -webkit-column-count: 3;
+            -moz-column-count: 3;
+            column-count: 3;
+            -webkit-column-gap: 1.25rem;
+            -moz-column-gap: 1.25rem;
+            column-gap: 1.25rem;
+            orphans: 1;
+            widows: 1;
+        }
+        .tarjeta-columna .tarjeta {
+            display: inline-block;
+            width: 100%;
+        }
+    }
+    
+    .tarjeta-cuerpo {
+        -ms-flex: 1 1 auto;
+        flex: 1 1 auto;
+        min-height: 1px;
+        padding: 1.25rem
+    }
+    
+    .tarjeta-titulo {
+        margin-bottom: .75rem;
+        background-color: rgb(255, 250, 250);
+    }
+    /*navbar*/
+    
+    .fixed-top {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 1030;
+    }
+    /*configuracion navegador*/
+    
+    .navbar-nav {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        padding-left: 0;
+        margin-bottom: 0;
+        list-style: none;
+    }
+    /*configuracion responsi*/
+    
+    @media (min-width: 700px) {
+        .navbar-expand-lg .navbar-nav {
+            -ms-flex-direction: row;
+            flex-direction: row;
+        }
+        .navbar-expand-lg .navbar-nav .nav-link {
+            padding-right: 0.5rem;
+            padding-left: 0.5rem;
+            font-family: arial;
+            text-decoration: none;
+        }
+        .navbar-expand-lg .navbar-collapse {
+            display: -ms-flexbox !important;
+            display: flex !important;
+            -ms-flex-preferred-size: auto;
+            flex-basis: auto;
+            text-align: right;
+        }
+        .navbar-expand-lg .navbar-toggler {
+            display: none;
+        }
+    }
+    /*color y tamaño de spotiapp*/
+    
+    .navbar-dark .navbar-brand {
+        color: #fff;
+        font-size: 30px;
+    }
+    /*color link*/
+    
+    .navbar-dark .navbar-nav .nav-link {
+        color: rgba(255, 255, 255, 0.5);
+    }
+    /*link activo*/
+    
+    .navbar-dark .navbar-nav .active>.nav-link,
+    .navbar-dark .navbar-nav .nav-link.active {
+        color: #fff;
+    }
+    /*imagen boton del navegador*/
+    
+    .navbar-dark .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.5)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    }
+    /*fondo del navegador*/
+    
+    .bg-dark {
+        background-color: rgba(0, 0, 0, .8) !important;
+    }
+    /*configuracion del boton para el modo celular*/
+    
+    .navbar-toggler {
+        padding: 0.25rem 0.75rem;
+        font-size: 1.25rem;
+        line-height: 1;
+        background-color: transparent;
+        border: 1px solid transparent;
+        border-radius: 0.25rem;
+    }
+    /*desplegar el menu en modo movil*/
+    
+    .collapse:not(.show) {
+        display: none;
+    }
+    /*desplegar menu responsi*/
+    
+    .navbar-collapse {
+        -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+        -ms-flex-positive: 1;
+        flex-grow: 1;
+        -ms-flex-align: center;
+        align-items: center;
+    }
+    /*congiugracion icono responsi*/
+    
+    .navbar-toggler-icon {
+        display: inline-block;
+        width: 1.5em;
+        height: 1.5em;
+        vertical-align: middle;
+        content: "";
+        background: no-repeat center center;
+        background-size: 100% 100%;
+    }
+    /*input busqueda*/
+    
+    .form-control {
+        display: block;
+        width: 100%;
+        height: calc(1.5em + 0.75rem + 2px);
+        padding: 0.375rem 0.75rem;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #495057;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        border-radius: 0.25rem;
+        transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    }
+    
+    @media (prefers-reduced-motion: reduce) {
+        .form-control {
+            transition: none;
+        }
+    }
+    /*otras*/
+    
+    .audioCancion {
+        width: 100%
+    }
+    
+    .tituloNovedades {
+        margin-top: 10px;
+        font-size: 40px;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .subTitulo {
+        font-size: 30px;
+        text-align: center;
+        width: 100%;
+    }
+    
+    .cabeza {
+        height: 50px;
+    }
+    
+    .ultimasBusquedas {
+        margin-left: 11%;
+        margin-top: 5%;
+        margin-bottom: 5%;
+    }
+    
+    .cov19 {
+        font-family: monospace;
+        text-align: center;
+        font-size: 25px;
+        color: rgba(233, 240, 232, 0.979) !important;
+        background-color: rgba(56, 6, 85, 0.6);
+        height: 100px;
+        font-weight: lighter;
+    }
+    
+    .row {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        margin-right: -15px;
+        margin-left: -15px
+    }
+    
+    .row2 {
+        margin-top: 20px;
+        margin-left: 10%;
+    }
+    /*estilo de las tablas de musica*/
+    
+    .table {
+        width: 100%;
+        margin-bottom: 1rem;
+        color: #212529
+    }
+    
+    .table td,
+    .table th {
+        padding: .75rem;
+        vertical-align: top;
+        border-top: 1px solid #0b1016
+    }
+    
+    .table thead th {
+        vertical-align: bottom;
+        border-bottom: 2px solid #ffffff
+    }
+    
+    .navegador {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -ms-flex-align: center;
+        align-items: center;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        padding: 0.5rem 1rem;
+        margin-bottom: 0px !important;
+    }
+    
+    #header {
+        position: fixed;
+        width: 100%;
+        z-index: 1000;
+    }
+    
+    .imagenArtista {
+        margin-left: 20px;
+        margin-top: 20px;
+    }
+    
+    .contacto {
+        display: block;
+        margin: auto;
+        text-align: center;
+    }
+    
+    .errores {
+        color: red;
+    }
+    
+    .botonRegresar {
+        margin-top: 6%;
+        margin-left: 5%;
+    }
+    
+    .infoArtista {
+        margin-left: 30%;
+    }
+    /* estilo formulario compartir y busqueda*/
+    
+    .formulario .form .form-head .form-title {
+        font-weight: normal;
+        font-family: sans-serif;
+        color: #14c322d8;
+        text-align: center;
+        padding: 14px 0;
+    }
+    
+    .formulario .form .form-head .form-title span {
+        color: white;
+    }
+    
+    .formulario .form {
+        background: rgba(0, 0, 0, .6);
+        width: 80%;
+        max-width: 650px;
+        margin: auto;
+        padding: 5px 35px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        border-radius: 3px;
+    }
+    
+    .formulario .form .artista {
+        margin-top: 5%;
+        margin-left: 5%;
+    }
+    
+    .formulario .form .form-label {
+        display: block;
+        color: #14c322d8;
+        font-size: 16px;
+        font-family: Roboto;
+        position: relative;
+    }
+    
+    .formulario .form .form-input,
+    .form-textarea {
+        background: (0, 0, 0, .7);
+        border: none;
+        outline: none;
+        border-bottom: 2px solid #14c322d8;
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 5%;
+        border-radius: 2px;
+        font-size: 14px;
+        color: black !important;
+    }
+    
+    .contenedor .form-input {
+        background: (0, 0, 0, .7);
+        border: none;
+        outline: none;
+        border-bottom: 2px solid #14c322d8;
+        width: 170px;
+        padding: 12px;
+        margin: 4%;
+        border-radius: 2px;
+        font-size: 14px;
+        color: rgb(12, 10, 10);
+    }
+    
+    .formulario .form .form-textarea {
+        resize: vertical;
+        max-height: 150px;
+        min-height: 100px;
+    }
+    
+    .botonCompartir {
+        border-radius: 20px;
+        width: 100%;
+        font-family: Roboto;
+        outline: none;
+        background: #14c322d8;
+        font-size: 16px;
+        border: none;
+        color: white;
+        padding: 15px 0;
+        cursor: pointer;
+        transition: all, 5s ease;
+        ;
+    }
+    
+    .historialTitulo {
+        font-size: 30px;
+        background-color: rgb(9, 63, 100, 0.8);
+        margin-top: 20px;
+        padding: 15px;
+        border: none;
+        color: white;
+    }
+    
+    .historialCuerpo {
+        font-size: 15px;
+        margin-left: 20px;
+        color: yellow;
+    }
+    
+    .form-input-busqueda {
+        background: (0, 0, 0, .7);
+        border: none;
+        outline: none;
+        border-bottom: 2px solid #14c322d8;
+        width: 25%;
+        margin: 2px;
+        padding: 15px;
+        border-radius: 2px;
+        font-size: 14px;
+        color: rgb(12, 10, 10);
+    }
+    
+    .botonCompartir2 {
+        border-radius: 20px;
+        padding: 2px;
+        margin: 2px;
+        width: 15%;
+        font-size: 5px;
+        font-family: Roboto;
+        outline: none;
+        background: #14c322d8;
+        font-size: 16px;
+        border: none;
+        color: white;
+        padding: 15px 0;
+        cursor: pointer;
+        transition: all, 0, 5s ease;
+        ;
+    }
+    /*configuracion de los botones de la pagina ver artista, track y album*/
+    
+    .botonVerArtista {
+        border-radius: 20px;
+        padding: 2px;
+        margin: 2px;
+        width: 100%;
+        font-size: 5px;
+        font-family: Roboto;
+        outline: none;
+        background: #14c322d8;
+        font-size: 16px;
+        border: none;
+        color: white;
+        padding: 15px 0;
+        cursor: pointer;
+        transition: all, 0, 5s ease;
+        ;
+    }
+    
+    .albummarge {
+        margin: auto;
+    }
+    
+    .albummarge2 {
+        display: none;
+        margin: auto;
+    }
+    
+    .trackAudio {
+        margin-left: 50px;
+        margin-top: 40px;
+    }
+    
+    @media screen and (max-width: 390px) {
+        .cabeza {
+            height: 70px;
+        }
+        .albummarge {
+            display: none;
+        }
+        .albummarge2 {
+            display: inline;
+            margin-left: 5%;
+        }
+        .trackAudio {
+            margin-left: 0px;
+        }
+        .row2 {
+            margin: auto;
+        }
+        .imagenArtista {
+            margin: auto;
+        }
+        .infoArtista {
+            margin: auto;
+            font-size: 25px;
+            text-align: center;
+        }
+        .img-circle {
+            border-radius: 100%;
+            width: 350px;
+            position: relative;
+            margin: auto;
+        }
+        .botonCompartir2 {
+            width: 100%;
+            font-size: 16px;
+        }
+        .form-input-busqueda {
+            width: 90%;
+        }
+        .historialBusqueda {
+            font-size: 15px;
+        }
+    }
+    
+    .btnBuscarMargen {
+        margin-left: 10px;
+        margin-top: 10px;
+    }
+    
+    .contenedor .botonCompartir:hover {
+        background: rgb(0, 0, 0);
+    }
+    
+    .infoArtista .botonCompartir2:hover {
+        background: rgb(0, 0, 0);
+    }
+    
+    .formulario .form .botonCompartir:hover {
+        background: rgb(0, 0, 0);
+        width: 50%;
+    }
+    
+    .contenedor {
+        margin-top: 2%;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+    /* Animaciones */
+    
+    .img-thumb {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .animated {
+        -webkit-animation-duration: 1s;
+        animation-duration: 1s;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+    }
+    
+    .fast {
+        -webkit-animation-duration: 0.4s;
+        animation-duration: 0.4s;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+    }
+    
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    
+    .fadeIn {
+        animation-name: fadeIn;
+    }

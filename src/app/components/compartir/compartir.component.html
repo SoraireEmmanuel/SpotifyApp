@@ -1,0 +1,29 @@
+<div class="cabeza"> </div>
+<div class="formulario">
+    <form class="form" autocomplete="off" [formGroup]="forma" (ngSubmit)="enviar()">
+        <div class=form-head>
+            <h1 class="form-title">E<span>nviar a un amigo </span></h1>
+        </div>
+        <label class="form-label">Informacion a compartir </label>
+        <input type="text" formControlName="infoCom" class="form-input form-control" #infoEnviada value={{infoEnviar.id}} disabled>
+
+        <label class="form-label">Destinatario</label>
+        <input type="text" formControlName="destinatario" [class.is-invalid]="destinatarioNoValido" class="form-input form-control" #infoCorreo placeholder="Ingrese el Correo Destino">
+        <small class="errores" *ngIf="destinatarioNoValido">*Es un campo obligatorio</small>
+
+        <label class="form-label">Nombre y Apellido</label>
+        <input type="text" formControlName="nombreyapellido" [class.is-invalid]="nombreNoValido" class="form-input form-control" #infoApeyNom placeholder="Ingrese nombre y apellido del destinatario">
+        <small class="errores" *ngIf="nombreNoValido">*Es un campo obligatorio</small>
+
+        <label class="form-label">Asunto</label>
+        <input type="text" formControlName="asunto" [class.is-invalid]="asuntoNoValido" class="form-input form-control" #infoAsunto placeholder="Ingrese el asunto">
+        <small class="errores" *ngIf="asuntoNoValido">*Correo invalido o no ingreso uno. Este es un campo obligatorio</small>
+
+        <label class="form-control" class="form-label">Mensaje</label>
+        <textarea class="form-textarea form-control" formControlName="mensaje" placeholder="Escriba aqui un mensaje"></textarea>
+
+        <button type="submit" class=" botonCompartir "> Enviar </button>
+    </form>
+
+
+</div>

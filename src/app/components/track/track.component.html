@@ -1,0 +1,22 @@
+<div class="cabeza"> </div>
+<div class="row row2 ">
+    <div class="imagenArtista">
+        <img [src]="track.album.images|noimage" class=" img-circle ">
+
+    </div>
+    <div class="infoArtista">
+        <h3>Cancion: {{track.name}}</h3>
+        <h6>Album: {{track.album.name}}</h6>
+        <p>
+            <a [href]="track.external_urls.spotify" target="_blank">Ir a la pagina de la cancion en Spotify</a>
+        </p>
+        <div>
+
+        </div>
+        <button routerLink="/search" class=" botonVerArtista">Nueva Busqueda</button>
+        <button (click)="compartir(track.external_urls.spotify)" class="botonVerArtista"> Compartir  </button>
+    </div>
+</div>
+<div class="trackAudio">
+    <iframe [src]="track.uri | domseguro: 'https://open.spotify.com/embed?uri='" width="360" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+</div>
